@@ -1,0 +1,28 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.3"
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+publish {
+    userOrg = 'shawnlin013'
+    groupId = 'com.shawnlin'
+    artifactId = rootProject.name
+    publishVersion = '1.0.0'
+    desc = 'The utility that is used to manage the preferences.'
+    website = 'https://github.com/ShawnLin013/${rootProject.name}'
+}
