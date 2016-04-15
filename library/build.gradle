@@ -8,8 +8,8 @@ android {
     defaultConfig {
         minSdkVersion 15
         targetSdkVersion 23
-        versionCode 1
-        versionName "1.0.0"
+        versionCode VERSION_CODE as int
+        versionName VERSION_NAME
     }
     buildTypes {
         release {
@@ -18,11 +18,21 @@ android {
         }
     }
 }
+
+dependencies {
+    compile 'com.google.code.gson:gson:2.6.2'
+}
+
 publish {
-    userOrg = 'shawnlin013'
-    groupId = 'com.shawnlin'
-    artifactId = rootProject.name
-    publishVersion = '1.0.0'
-    desc = 'The utility that is used to manage the preferences.'
-    website = 'https://github.com/ShawnLin013/${rootProject.name}'
+    userOrg = POM_DEVELOPER_ID
+    groupId = GROUP
+    artifactId = ARTIFACT_ID
+    publishVersion = VERSION_NAME
+    licences = ['Apache-2.0']
+    desc = POM_DESCRIPTION
+    website = POM_URL
+    issueTracker = ISSUE_URL
+    repository = POM_SCM_URL
+    autoPublish = false
+    dryRun = false
 }
