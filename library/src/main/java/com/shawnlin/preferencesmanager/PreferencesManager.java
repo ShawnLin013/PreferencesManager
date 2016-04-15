@@ -5,12 +5,16 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 
+import com.google.gson.Gson;
+
 /**
  * The utility that is used to manage the preferences
  */
 public class PreferencesManager {
 
     private static SharedPreferences mSharedPreferences;
+    private static Gson mGson;
+
     private Context mContext;
     private String mName;
 
@@ -20,6 +24,7 @@ public class PreferencesManager {
      */
     public PreferencesManager(Context context) {
         mContext = context;
+        mGson = new Gson();
     }
 
     /**
@@ -180,5 +185,31 @@ public class PreferencesManager {
         }
 		return mSharedPreferences.getBoolean(key, false);
 	}
+
+    /**
+     * Put a object in the preferences editor.
+     * @param key The name of the preference to modify.
+     * @param value The new value for the preference.
+     */
+    public static void putObject(String key, Object value) {
+        if (mGson == null || value == null) {
+            return;
+        }
+
+        putString(key, mGson.toJson(value));
+    }
+
+    /**
+     * Retrieval a object from the preferences.
+     * @param key The name of the preference to retrieve.
+     * @param type The class of the preference to retrieve.
+     * @return Returns the preference values if they exist, or defValues.
+     */
+    public static <T> T getObject(String key, Class<T> type) {
+        if (mSharedPreferences == null || mGson == null) {
+            return null;
+        }
+        return mGson.fromJson(getString(key), type);
+    }
 
 }
