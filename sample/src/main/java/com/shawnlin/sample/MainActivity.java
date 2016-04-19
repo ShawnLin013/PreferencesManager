@@ -20,10 +20,10 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        // Initialize the preferences manager
         new PreferencesManager(this)
             .setName("prefs")
             .init();
-
 
         Button intButton = (Button) findViewById(R.id.int_button);
         intButton.setOnClickListener(new View.OnClickListener() {

@@ -10,7 +10,7 @@ Initialize the preferences manager
 
 ```java
 new PreferencesManager(this)
-    .setName("prefs")
+    .setName(name)
     .init();
 ```
 
@@ -22,6 +22,8 @@ PreferencesManager.putInt(key, value);
 
 // get int from preferences
 PreferencesManager.getInt(key)
+or 
+PreferencesManager.getInt(key, defValue)
 ```
 
 Example 2:
@@ -57,7 +59,7 @@ buildscript {
 }
 
 dependencies {
-    compile 'com.shawnlin:PreferencesManager:1.0.1'
+    compile 'com.shawnlin:PreferencesManager:1.0.2'
 }
 ```
 
