@@ -344,4 +344,26 @@ public class PreferencesManager {
         mSharedPreferences.edit().clear().apply();
     }
 
+    /**
+     * Registers a callback to be invoked when a change happens to a preference.
+     * @param listener The callback that will run.
+     */
+    public static void registerOnChangeListener(SharedPreferences.OnSharedPreferenceChangeListener listener) {
+        if (mSharedPreferences == null) {
+            return;
+        }
+        mSharedPreferences.registerOnSharedPreferenceChangeListener(listener);
+    }
+
+    /**
+     * Unregisters a previous callback.
+     * @param listener The callback that should be unregistered.
+     */
+    public static void unregisterOnChangeListener(SharedPreferences.OnSharedPreferenceChangeListener listener) {
+        if (mSharedPreferences == null) {
+            return;
+        }
+        mSharedPreferences.unregisterOnSharedPreferenceChangeListener(listener);
+    }
+
 }
