@@ -2,7 +2,7 @@
 
 The android library that is used to manage the preferences.
 
-[![Platform](http://img.shields.io/badge/platform-android-brightgreen.svg?style=flat)](http://developer.android.com/index.html) [![Language](http://img.shields.io/badge/language-java-orange.svg?style=flat)](http://www.oracle.com/technetwork/java/javase/downloads/index.html) [![License](http://img.shields.io/badge/license-apache2.0-lightgrey.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0) [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-PreferencesManager-green.svg?style=true)](http://android-arsenal.com/details/1/3438)
+[![Platform](http://img.shields.io/badge/platform-android-brightgreen.svg?style=flat)](http://developer.android.com/index.html) [![Language](http://img.shields.io/badge/language-java-orange.svg?style=flat)](http://www.oracle.com/technetwork/java/javase/downloads/index.html) [![License](http://img.shields.io/badge/license-apache2.0-lightgrey.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0) [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-PreferencesManager-green.svg?style=true)](http://android-arsenal.com/details/1/3438) [![API](https://img.shields.io/badge/API-15%2B-blue.svg?style=flat)](https://android-arsenal.com/api?level=15) [![Download](https://api.bintray.com/packages/shawnlin013/maven/number-picker/images/download.svg)](https://bintray.com/shawnlin013/maven/PreferencesManager/_latestVersion)
 
 ## Usage
 
@@ -59,7 +59,7 @@ buildscript {
 }
 
 dependencies {
-    compile 'com.shawnlin:PreferencesManager:1.0.2'
+    compile 'com.shawnlin:PreferencesManager:1.0.3'
 }
 ```
 
